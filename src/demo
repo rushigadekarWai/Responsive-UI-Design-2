@@ -1,0 +1,108 @@
+<div class="container mt-4">
+    <div class="card p-4 shadow">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="fw-bold">Create New Learning Path</h5>
+            <div>
+                <button class="btn btn-outline-danger">CANCEL</button>
+                <button class="btn btn-primary">SAVE</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Form Section -->
+        <div class="row">
+            <div class="col-md-2 text-center">
+                <img src="your-image-url.jpg" class="img-fluid rounded-circle" width="100">
+            </div>
+            <div class="col-md-10">
+                <div class="mb-3">
+                    <label class="fw-bold">Learning Path</label>
+                    <input type="text" class="form-control" placeholder="Title">
+                </div>
+                <div class="mb-3">
+                    <label class="fw-bold">Select Courses</label>
+                    <select class="form-select">
+                        <option>Select Course</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="fw-bold">Description</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Courses Added Section -->
+        <h6 class="fw-bold">Courses Added</h6>
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>Courses</th>
+                        <th>Skill Sets</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Course Row 1 -->
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="web-dev-icon.png" width="40" class="me-2">
+                                <div>
+                                    <strong>Web Development</strong><br>
+                                    <small>Duration: ⏳ 80 Hrs</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="badge bg-light text-dark">HTML</span>
+                            <span class="badge bg-light text-dark">PYTHON</span>
+                            <span class="badge bg-light text-dark">CSS</span>
+                        </td>
+                        <td>
+                            <a href="#">https://app.intimepro.io/app/main/dashboard</a><br>
+                            <small>ID: adam.murphy@mail.com</small><br>
+                            <small>Password: qwerty123</small>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-primary"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+
+                    <!-- Course Row 2 -->
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="ui-dev-icon.png" width="40" class="me-2">
+                                <div>
+                                    <strong>UI Development</strong><br>
+                                    <small>Duration: ⏳ 85 Hrs</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="badge bg-light text-dark">HTML</span>
+                            <span class="badge bg-light text-dark">PYTHON</span>
+                            <span class="badge bg-light text-dark">JAVA</span>
+                        </td>
+                        <td>
+                            <a href="#">https://sample.edu/day</a><br>
+                            <small>ID: adam.murphy@mail.com</small><br>
+                            <small>Password: qwerty123</small>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-primary"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

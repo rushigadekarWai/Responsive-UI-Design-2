@@ -1,0 +1,555 @@
+/* Default Sidebar Styles */
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background: #F4F4F9;
+
+}
+
+.container {
+    width: 98%;
+    min-height: 98vh;  /* Ensures it starts with a minimum height */
+    padding: 20px;  /* Adds spacing inside */
+    border: 2px solid black;  /* Keeps the border */
+}
+.container {
+    overflow: auto; 
+    max-height: 90vh;  /* Prevents it from growing endlessly */
+}
+
+
+.sidebar {
+    width: 270px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: none;
+    /* Remove shadow from entire sidebar */
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 55px;
+    /* Start shadow below the logo */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 55px);
+    /* Apply shadow only below logo */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    /* Apply shadow */
+    z-index: -1;
+}
+
+
+
+.logo-section {
+    height: 55px;
+    /* display: flex; */
+    /* align-items: center; */
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 0 1rem 0 2rem;
+}
+
+
+/* Hide sidebar on small screens */
+@media (max-width: 992px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    /* Show sidebar when toggled */
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* Sidebar Toggle Button */
+    /* .sidebar-toggle {
+        display: block;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        z-index: 1050;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        font-size: 20px;
+    } */
+    .sidebar-toggle {
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+        background: none;
+        border: none;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+/* Hide toggle button on large screens */
+@media (min-width: 992px) {
+    .sidebar-toggle {
+        display: none;
+    }
+}
+
+
+
+/* ----------------------------------navbar content---------------------------------------------------- */
+/* Navbar */
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 270px;
+    right: 0;
+    height: 55px;
+    background: #ffffff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures left and right content are aligned properly */
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+    font-size: 14px;
+    color: #888;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumb .active {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Navbar Menu (Right-Side) */
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 15px; /* Ensures spacing matches the image */
+}
+
+/* Navbar Items */
+.navbar-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    padding: 8px 12px; /* Adjusted padding for spacing */
+    position: relative;
+}
+
+/* Icons */
+.navbar-item i {
+    font-size: 18px;
+    color: #797A7A;
+}
+
+/* Language Selector */
+.flag-icon {
+    width: 30px;
+    height: auto;
+    margin-right: 5px;
+
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #323232;
+}
+
+.profile-role {
+    font-size: 14px;
+    color: #797A7A;
+}
+
+/* Notification Dot */
+.notification-dot {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 8px;
+    height: 8px;
+    background: orange;
+    border-radius: 50%;
+}
+
+/* Separators */
+.navbar-separator {
+    width: 1px;
+    height: 20px;
+    background: #ddd;
+    margin: 0 5px;
+}
+
+/* Dropdown Icon */
+.fa-chevron-down {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Responsive Navbar */
+/* 📌 Medium Devices (Tablets & Small Laptops: max-width 992px) */
+@media (max-width: 992px) {
+    .navbar {
+        left: 0;
+        padding: 0 10px; /* Reduce padding */
+        background: #ffffff;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+        font-size: 13px;
+        color: #585858;
+    }
+
+    /* Navbar Menu */
+    .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 55px;
+        right: 0;
+        width: 100%;
+        background-color: #ffffff;
+        text-align: center;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(-10px);
+        transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        border-top: 1px solid #ddd;
+    }
+
+    /* Open state */
+    .navbar-menu.open {
+        display: block;
+        opacity: 1;
+        max-height: 500px;
+        transform: translateY(0);
+        padding: 10px 0;
+    }
+
+    /* Navbar Items */
+    .navbar-item {
+        display: block;
+        color: #333;
+        padding: 12px 15px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Profile Section */
+    .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    .profile-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .profile-info {
+        text-align: left;
+    }
+
+    .profile-name {
+        font-size: 18px;
+        font-weight: bold;
+        color: #323232;
+    }
+
+    .profile-role {
+        font-size: 14px;
+        color: #797A7A;
+    }
+
+    /* Toggler Button */
+    .navbar-toggler {
+        display: flex;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    /* Separator */
+    .navbar-separator {
+        width: 100%;
+        height: 1px;
+        background: #ddd;
+        margin: 10px 0;
+    }
+}
+
+/* 📌 Small Devices (Mobile Phones: max-width 500px) */
+@media (max-width: 500px) {
+    .navbar {
+        left: 0;
+        padding: 5px 8px;
+        background: #ffffff;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+        font-size: 12px;
+        color: #585858;
+    }
+
+    /* Navbar Menu */
+    .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        background-color: #ffffff;
+        text-align: center;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(-10px);
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        border-top: 1px solid #ddd;
+    }
+
+    /* Open state */
+    .navbar-menu.open {
+        display: block;
+        opacity: 1;
+        max-height: 400px;
+        transform: translateY(0);
+        padding: 8px 0;
+    }
+
+    /* Navbar Items */
+    .navbar-item {
+        display: block;
+        font-size: 14px;
+        color: #333;
+        padding: 10px 12px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Navbar Icons */
+    .navbar-item i {
+        color: #555;
+        font-size: 16px;
+    }
+
+    /* Profile Section */
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 0;
+        gap: 6px;
+    }
+
+    .profile-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .profile-name {
+        font-size: 16px;
+        font-weight: bold;
+        color: #323232;
+    }
+
+    .profile-role {
+        font-size: 12px;
+        color: #797A7A;
+    }
+
+    /* Toggler Button */
+    .navbar-toggler {
+        display: flex;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    /* Separator */
+    .navbar-separator {
+        width: 100%;
+        height: 1px;
+        background: #ddd;
+        margin: 8px 0;
+    }
+}
+
+
+
+
+
+/* --------------------------------main contetn css---------------------------- */
+/* Main Content Area */
+.main-content {
+    position: absolute;
+    top: 55px; /* Below navbar */
+    left: 270px; /* Same as sidebar width */
+    height: calc(100vh - 65px); /* Remaining height */
+    width: calc(100% - 270px); /* Remaining width */
+    padding: 15px;
+    background: #F4F4F9;
+    display: flex;
+}
+
+/* Ensure the card takes full width */
+.card-container {
+    width: 100%;
+    height: 1200px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1; /* Allows it to take available space */
+}
+
+/* Card Design */
+.card {
+    flex-grow: 1; /* Expands to full width */
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+/* Main content adjustments for 1200px and below */
+@media (max-width: 1200px) {
+    .main-content {
+        left: 240px;
+        width: calc(100% - 240px);
+    }
+}
+
+/* Adjustments for tablets and medium screens (992px and below) */
+@media (max-width: 992px) {
+    .main-content {
+        left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .card-container {
+        padding: 5px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+}
+
+/* Adjustments for smaller tablets (768px and below) */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+}
+
+/* Specific adjustments for 556px */
+@media (max-width: 556px) {
+    .main-content {
+        padding: 5px;
+    }
+
+    .card {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    /* Example: Hide an element below 556px */
+    .navbar-left {
+        display: none;
+    }
+}
+
+/* Adjustments for extra small screens (576px and below) */
+@media (max-width: 576px) {
+    .main-content {
+        padding: 5px;
+    }
+
+    .card {
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+
+
+
+
+/* Hover effect on accordion button */
+.accordion-button:hover {
+    background-color: #F4F4F9 !important;
+}
+
+/* Hover effect on list items */
+.list-group-item:hover {
+    background-color: #F4F4F9 !important;
+}
+
+
+.skill-color{
+    color: #A061F7;
+    background-color: #F2E6FF;
+    font-weight: 600;
+}
